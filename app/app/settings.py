@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lemma.apps.LemmaConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
