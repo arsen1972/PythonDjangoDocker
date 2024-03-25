@@ -15,14 +15,14 @@ class LemmaAPIView(generics.ListAPIView):
     serializer_class = LemmaSerializer
 
 class MakeLemma(APIView):
-    def lemma(self, str):
+    def get_lemma(self, str):
         return "NEW" + str
     def post(self, request):
         words = request.data['words']
         my_dict = {}
 
         for element in words:
-            my_dict[element] = self.lemma(element)
+            my_dict[element] = self.get_lemma(element)
 
         my_json = json.dumps(my_dict)
 
