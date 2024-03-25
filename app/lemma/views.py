@@ -1,4 +1,5 @@
 import json
+import constants
 
 from rest_framework import generics
 from rest_framework.response import Response
@@ -17,6 +18,7 @@ class LemmaAPIView(generics.ListAPIView):
 class MakeLemma(APIView):
     def get_lemma(self, str):
         return "NEW" + str
+
     def post(self, request):
         words = request.data['words']
         my_dict = {}
@@ -25,5 +27,6 @@ class MakeLemma(APIView):
             my_dict[element] = self.get_lemma(element)
 
         my_json = json.dumps(my_dict)
+        print("log: POST request lemma from " + constants.ENDPOINT_01)
 
         return Response (my_json, status=HTTP_200_OK)

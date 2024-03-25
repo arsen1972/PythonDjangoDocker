@@ -1,0 +1,1 @@
+ENDPOINT_01 = 'api/v1/lemma/post/'
